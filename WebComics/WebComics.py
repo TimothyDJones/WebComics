@@ -203,6 +203,7 @@ class Ui_MainWindow(object):
         self.btn1.setItemText(1, _translate("MainWindow", "Calvin", None))
         self.btn1.setItemText(2, _translate("MainWindow", "Garfield", None))
         self.btn1.setItemText(3, _translate("MainWindow", "OneBigHappy", None))
+		self.btn1.setItemText(4, _translate("MainWindow", "B.C.", None))
         self.date.setDisplayFormat(_translate("MainWindow", "yyyy/MM/dd", None))
         self.next.setText(_translate("MainWindow", "N", None))
         self.prev.setText(_translate("MainWindow", "P", None))
@@ -344,7 +345,7 @@ class Ui_MainWindow(object):
                 self.listComics.insertItem(r, txt)
                 self.listComics.setCurrentRow(r)
                 self.btn1.clear()
-                original_list = ['Select', 'Calvin', 'Garfield', 'OneBigHappy']
+                original_list = ['Select', 'Calvin', 'Garfield', 'OneBigHappy', 'B.C.']
                 new_list = original_list + new_lines
                 for i in new_list:
                     self.btn1.addItem(i)
@@ -362,6 +363,8 @@ class Ui_MainWindow(object):
                 self.base_url = "http://www.gocomics.com/garfield/"
             elif self.name == "OneBigHappy":
                 self.base_url = "http://www.gocomics.com/onebighappy/"
+			elif self.name == "B.C.":
+                self.base_url = "http://www.gocomics.com/bc/"
             else:
                 self.base_url = "http://www.gocomics.com/"+self.name+'/'
             self.goto_page()
